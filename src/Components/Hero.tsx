@@ -2,18 +2,23 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative flex items-center justify-center px-6 py-32 font-manrope">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="relative flex items-center justify-center px-6 py-32 font-manrope bg-slate-950 overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-4xl text-center">
         {/* Main headline */}
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-100 sm:text-5xl md:text-6xl">
           I turn your ideas into{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
             cinematic videos
           </span>
         </h1>
 
         {/* Supporting text */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
           Helping brands hook their audience, build trust, and drive real
           results through high-impact video content.
         </p>
@@ -23,7 +28,7 @@ const Hero: React.FC = () => {
           {/* Primary CTA */}
           <a
             href="#contact"
-            className="group inline-flex items-center justify-center gap-3 rounded-lg bg-indigo-400 px-9 py-4 text-lg font-medium text-white shadow-md transition-all duration-200 hover:bg-indigo-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2"
+            className="group inline-flex items-center justify-center gap-3 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-9 py-4 text-lg font-medium text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
             Get in Touch
             <svg
@@ -43,7 +48,7 @@ const Hero: React.FC = () => {
           {/* Secondary CTA */}
           <a
             href="#work"
-            className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-9 py-4 text-lg font-medium text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-9 py-4 text-lg font-medium text-slate-300 transition-all duration-200 hover:border-slate-500 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
             View My Work
           </a>
