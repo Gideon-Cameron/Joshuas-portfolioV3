@@ -1,52 +1,89 @@
-// Navbar.jsx
 import React from "react";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
-    <nav className="w-full bg-white border-b border-blue-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Left: Logo / Name */}
-        <div className="text-xl font-semibold text-blue-600">
-          Josh
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 font-manrope">
+        {/* Left side */}
+        <div className="flex items-center gap-10">
+          {/* Logo / Name */}
+          <a
+            href="#"
+            className="text-xl font-extrabold tracking-tight text-slate-900"
+          >
+            Josh
+          </a>
+
+          {/* Nav links */}
+          <ul className="hidden items-center gap-8 md:flex">
+            <li>
+              <a
+                href="#about"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#work"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+              >
+                Work
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Right: Navigation Links */}
-        <ul className="flex space-x-8 text-gray-700 font-medium">
-          <li>
-            <a
-              href="#about"
-              className="hover:text-orange-500 transition-colors duration-200"
+        {/* Right side */}
+        <div className="flex items-center gap-6">
+          {/* Resume link */}
+          <a
+            href="/resume.pdf"
+            download
+            className="hidden text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 sm:inline-flex"
+          >
+            Download Resume
+          </a>
+
+          {/* CTA Button */}
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-2 rounded-md bg-indigo-400 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-indigo-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2"
+          >
+            Get in Touch
+            <svg
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#work"
-              className="hover:text-orange-500 transition-colors duration-200"
-            >
-              Work
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className="hover:text-orange-500 transition-colors duration-200"
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="hover:text-orange-500 transition-colors duration-200"
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
   );
 };
 
