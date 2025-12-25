@@ -41,17 +41,25 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full bg-slate-50 py-28 font-manrope">
-      <div className="mx-auto max-w-5xl px-6">
+    <section
+      id="contact"
+      className="relative w-full bg-slate-950 py-28 font-manrope overflow-hidden"
+    >
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-5xl px-6">
         {/* Header */}
         <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-wide text-indigo-500">
+          <p className="text-sm font-medium uppercase tracking-wide text-cyan-400">
             Contact
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-100 sm:text-4xl">
             Let’s work together
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-slate-400">
             Have a project in mind or want to explore an idea? Send me a message
             and I’ll get back to you shortly.
           </p>
@@ -64,33 +72,33 @@ const Contact: React.FC = () => {
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+              className="rounded-2xl border border-slate-800 bg-slate-900/70 p-8 shadow-lg backdrop-blur"
             >
               <div className="grid grid-cols-1 gap-6">
                 <input
                   type="text"
                   name="user_name"
                   placeholder="Your name"
-                  className="w-full rounded-md border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                  className="w-full rounded-md border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                 />
 
                 <input
                   type="email"
                   name="user_email"
                   placeholder="Your email"
-                  className="w-full rounded-md border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                  className="w-full rounded-md border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                 />
 
                 <textarea
                   name="message"
                   rows={4}
                   placeholder="Tell me about your project"
-                  className="w-full rounded-md border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                  className="w-full rounded-md border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
                 />
 
                 <button
                   type="submit"
-                  className="group inline-flex w-fit items-center gap-2 rounded-md bg-indigo-400 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2"
+                  className="group inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-lg shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
                 >
                   Send Message
                   <svg
@@ -108,12 +116,12 @@ const Contact: React.FC = () => {
                 </button>
 
                 {messageSent && (
-                  <p className="text-sm font-medium text-green-600">
+                  <p className="text-sm font-medium text-emerald-400">
                     ✅ Message sent successfully.
                   </p>
                 )}
                 {error && (
-                  <p className="text-sm font-medium text-red-600">
+                  <p className="text-sm font-medium text-red-400">
                     ❌ {error}
                   </p>
                 )}
@@ -133,7 +141,7 @@ const Contact: React.FC = () => {
                   href="https://www.youtube.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-medium text-slate-700 transition-colors hover:text-indigo-600"
+                  className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
                 >
                   YouTube
                 </a>
@@ -143,7 +151,7 @@ const Contact: React.FC = () => {
                   href="https://www.linkedin.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-medium text-slate-700 transition-colors hover:text-indigo-600"
+                  className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
                 >
                   LinkedIn
                 </a>
@@ -153,7 +161,7 @@ const Contact: React.FC = () => {
                   href="https://t.me/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-medium text-slate-700 transition-colors hover:text-indigo-600"
+                  className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
                 >
                   Telegram
                 </a>

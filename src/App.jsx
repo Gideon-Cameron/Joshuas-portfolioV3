@@ -1,4 +1,3 @@
-// import React from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
@@ -8,25 +7,16 @@ import Contact from "./Components/Contact";
 
 const App = () => {
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div className="min-h-screen w-full bg-slate-950">
       {/* Navigation */}
       <Navbar />
 
-      {/* Hero / About Section */}
+      {/* Sections */}
       <Hero />
       <About />
       <Services />
       <Work />
       <Contact />
-
-      {/*
-        Future sections will go here:
-        - About
-        - Services
-        - Portfolio
-        - Testimonials
-        - Contact
-      */}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-// Work.jsx
+// Work.tsx
 import React from "react";
 
 const videos = [
@@ -46,14 +46,22 @@ const videos = [
 
 const Work = () => {
   return (
-    <section id="work" className="w-full bg-white py-20 flex items-center">
-      <div className="w-full max-w-7xl mx-auto px-6">
+    <section
+      id="work"
+      className="relative w-full bg-slate-950 py-24 font-manrope overflow-hidden"
+    >
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/4 top-1/2 h-[600px] w-[600px] -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-7xl px-6">
         {/* Section Header */}
-        <div className="mb-10">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-teal-700">
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-200 md:text-4xl">
             Some of the stories I’ve helped bring to life
           </h2>
-          <p className="mt-3 text-slate-600 max-w-2xl">
+          <p className="mt-3 text-slate-400">
             Each project starts with a narrative problem — and ends with a story
             designed to move the audience to action.
           </p>
@@ -65,19 +73,19 @@ const Work = () => {
             {videos.map((video) => (
               <div
                 key={video.id}
-                className="min-w-[340px] md:min-w-[400px] lg:min-w-[460px] flex-shrink-0"
+                className="min-w-[340px] flex-shrink-0 md:min-w-[400px] lg:min-w-[460px]"
               >
                 {/* Video Card */}
-                <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-black">
+                <div className="group relative aspect-video overflow-hidden rounded-xl border border-slate-800 bg-black shadow-lg shadow-black/30 transition-transform hover:-translate-y-1">
                   {/* Overlay */}
-                  <div className="absolute inset-0 z-10 flex flex-col justify-end p-4 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
-                    <p className="text-[10px] uppercase tracking-widest text-slate-300">
+                  <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-end p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                    <p className="text-[10px] uppercase tracking-widest text-cyan-400">
                       {video.label}
                     </p>
-                    <h3 className="font-display text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold text-slate-100">
                       {video.headline}
                     </h3>
-                    <p className="mt-1 text-xs text-slate-200 leading-snug line-clamp-4">
+                    <p className="mt-1 text-xs leading-snug text-slate-300 line-clamp-4">
                       {video.description}
                     </p>
                   </div>
@@ -86,7 +94,7 @@ const Work = () => {
                   <iframe
                     src={video.url}
                     title={video.headline}
-                    className="w-full h-full"
+                    className="h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
@@ -96,7 +104,7 @@ const Work = () => {
           </div>
 
           {/* Scroll hint */}
-          <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-slate-950 to-transparent" />
         </div>
       </div>
     </section>
