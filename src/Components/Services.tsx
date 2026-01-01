@@ -17,9 +17,9 @@ const Services: React.FC = () => {
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Section header */}
         <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-wide text-cyan-400">
+          {/* <p className="text-sm font-medium uppercase tracking-wide text-cyan-400">
             Services
-          </p>
+          </p> */}
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-200 sm:text-4xl">
             How I help founders win
           </h2>
