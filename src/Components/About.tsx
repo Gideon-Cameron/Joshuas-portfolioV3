@@ -28,9 +28,9 @@ const About: React.FC = () => {
         {/* Right: Content */}
         <div className="md:col-span-3 text-slate-400">
           {/* Section label */}
-          <p className="text-sm font-medium uppercase tracking-wide text-cyan-400">
+          {/* <p className="text-sm font-medium uppercase tracking-wide text-cyan-400">
             About
-          </p>
+          </p> */}
 
           {/* Name */}
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-200 sm:text-4xl">
