@@ -5,10 +5,14 @@ const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [messageSent, setMessageSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
+
+    setError(null);
+    setMessageSent(false);
 
     const formData = new FormData(form.current);
 
@@ -21,23 +25,26 @@ const Contact: React.FC = () => {
       return;
     }
 
+    setLoading(true);
+
     emailjs
       .sendForm(
-        "service_2e9zq4f",
-        "template_mq85xh3",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "VSey23muaE28V71S_"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then(
-        () => {
-          setMessageSent(true);
-          setError(null);
-          form.current?.reset();
-        },
-        () => {
-          setError("Something went wrong. Please try again later.");
-        }
-      );
+      .then(() => {
+        setMessageSent(true);
+        form.current?.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setError("Something went wrong. Please try again later.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -65,7 +72,6 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        {/* Content */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
           {/* Form */}
           <div className="md:col-span-3">
@@ -98,21 +104,10 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="group inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-lg shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+                  disabled={loading}
+                  className="group inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-lg shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 disabled:opacity-60"
                 >
-                  Send Message
-                  <svg
-                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="M13 5l7 7-7 7" />
-                  </svg>
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
 
                 {messageSent && (
@@ -120,6 +115,7 @@ const Contact: React.FC = () => {
                     ✅ Message sent successfully.
                   </p>
                 )}
+
                 {error && (
                   <p className="text-sm font-medium text-red-400">
                     ❌ {error}
@@ -138,7 +134,7 @@ const Contact: React.FC = () => {
             <ul className="mt-6 space-y-4">
               <li>
                 <a
-                  href="https://www.youtube.com/"
+                  href="https://www.youtube.com/@JoshuaVernon-x3h"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
@@ -146,9 +142,10 @@ const Contact: React.FC = () => {
                   YouTube
                 </a>
               </li>
+
               <li>
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/joshua-germond-b32760316"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
@@ -156,15 +153,11 @@ const Contact: React.FC = () => {
                   LinkedIn
                 </a>
               </li>
+
               <li>
-                <a
-                  href="https://t.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-slate-400 transition-colors hover:text-cyan-400"
-                >
-                  Telegram
-                </a>
+                <span className="text-base font-medium text-slate-600">
+                  Telegram (coming soon)
+                </span>
               </li>
             </ul>
           </div>
