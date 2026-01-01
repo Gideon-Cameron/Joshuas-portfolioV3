@@ -1,7 +1,7 @@
 import React from "react";
-import Serv1 from "../assets/serv1.jpg";
-import Serv2 from "../assets/serv2.jpg";
-import Serv3 from "../assets/serv3.jpg";
+import Serv1 from "../assets/Serv1.jpg";
+import Serv2 from "../assets/Serv2.jpg";
+import Serv3 from "../assets/Serv3.jpg";
 
 const Services: React.FC = () => {
   return (
