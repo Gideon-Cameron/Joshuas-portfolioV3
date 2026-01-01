@@ -1,13 +1,13 @@
 import React from "react";
-import Img1 from "../assets/img1.png";
-import Img2 from "../assets/img2.png";
-import Img3 from "../assets/img3.png";
+import Serv1 from "../assets/serv1.jpg";
+import Serv2 from "../assets/serv2.jpg";
+import Serv3 from "../assets/serv3.jpg";
 
 const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative w-full bg-slate-950 py-28 font-manrope overflow-hidden"
+      className="relative w-full overflow-hidden bg-slate-950 py-28 font-manrope"
     >
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0">
@@ -21,42 +21,55 @@ const Services: React.FC = () => {
             Services
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-200 sm:text-4xl">
-            What I can help you with
+            How I help founders win
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Strategic narrative systems designed to eliminate leaks, build
+            authority, and convert attention into revenue.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Card 1 */}
-          <div className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10">
-            <img
-              src={Img1}
-              alt="Service One"
-              className="h-48 w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-            />
+        {/* Service rows */}
+        <div className="space-y-8">
+          {/* Service 1 */}
+          <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10 md:grid-cols-2">
+            {/* Image */}
+            <div className="flex items-center justify-center p-6">
+              <img
+                src={Serv1}
+                alt="The Narrative Blueprint"
+                className="max-h-[320px] w-full object-contain opacity-90 transition-opacity group-hover:opacity-100"
+              />
+            </div>
 
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-slate-200">
-                Service One
+            {/* Content */}
+            <div className="flex flex-col justify-center p-8">
+              <h3 className="text-2xl font-semibold text-slate-200">
+                The Narrative Blueprint
               </h3>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                ut aliquip ex ea commodo consequat.
+              <p className="mt-4 text-sm leading-relaxed text-slate-400">
+                A high-impact, one-time foundation for founders ready to fix the
+                “Invisibility Leak” and establish undeniable brand authority.
+              </p>
+
+              <ul className="mt-4 space-y-2 text-sm text-slate-400">
+                <li>• Complete visual identity (logo, type, color)</li>
+                <li>• Full Hero narrative: Hero, Villain, Solution</li>
+                <li>• Cinematic brand film to launch the movement</li>
+              </ul>
+
+              <p className="mt-4 text-sm font-medium text-slate-300">
+                Goal: Stop being invisible. Start selling a transformation.
               </p>
 
               <a
                 href="#contact"
-                className="group mt-6 inline-flex items-center gap-2 self-start rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+                className="group mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
                 Get Started
                 <svg
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -71,32 +84,43 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10">
-            <img
-              src={Img2}
-              alt="Service Two"
-              className="h-48 w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-            />
+          {/* Service 2 */}
+          <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10 md:grid-cols-2">
+            <div className="flex items-center justify-center p-6">
+              <img
+                src={Serv2}
+                alt="The Founder’s Authority Bundle"
+                className="max-h-[320px] w-full object-contain opacity-90 transition-opacity group-hover:opacity-100"
+              />
+            </div>
 
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-slate-200">
-                Service Two
+            <div className="flex flex-col justify-center p-8">
+              <h3 className="text-2xl font-semibold text-slate-200">
+                The Founder’s Authority Bundle
               </h3>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur.
+              <p className="mt-4 text-sm leading-relaxed text-slate-400">
+                Your outsourced Narrative Department — a monthly partnership so
+                you stay in your zone of genius while I handle strategy and execution.
+              </p>
+
+              <ul className="mt-4 space-y-2 text-sm text-slate-400">
+                <li>• Weekly 1-on-1 strategic roadmap sessions</li>
+                <li>• Customer journey audits & leak prevention</li>
+                <li>• 3–4 ghostwritten authority posts per week</li>
+              </ul>
+
+              <p className="mt-4 text-sm font-medium text-slate-300">
+                Investment: $1,500 / month
               </p>
 
               <a
                 href="#contact"
-                className="group mt-6 inline-flex items-center gap-2 self-start rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+                className="group mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
                 Get Started
                 <svg
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -111,32 +135,43 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10">
-            <img
-              src={Img3}
-              alt="Service Three"
-              className="h-48 w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-            />
+          {/* Service 3 */}
+          <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/20 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-cyan-500/10 md:grid-cols-2">
+            <div className="flex items-center justify-center p-6">
+              <img
+                src={Serv3}
+                alt="The Leak Audit"
+                className="max-h-[320px] w-full object-contain opacity-90 transition-opacity group-hover:opacity-100"
+              />
+            </div>
 
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-slate-200">
-                Service Three
+            <div className="flex flex-col justify-center p-8">
+              <h3 className="text-2xl font-semibold text-slate-200">
+                The Leak Audit
               </h3>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                officia deserunt mollit anim id est laborum.
+              <p className="mt-4 text-sm leading-relaxed text-slate-400">
+                A fast, low-friction deep dive to uncover exactly where you’re
+                losing money — and how to fix it.
+              </p>
+
+              <ul className="mt-4 space-y-2 text-sm text-slate-400">
+                <li>• 60-minute end-to-end journey audit</li>
+                <li>• Revenue leak diagnosis (Google → payment)</li>
+                <li>• Custom Patch Report with next steps</li>
+              </ul>
+
+              <p className="mt-4 text-sm font-medium text-slate-300">
+                Investment: $450 (one-time)
               </p>
 
               <a
                 href="#contact"
-                className="group mt-6 inline-flex items-center gap-2 self-start rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-5 py-2.5 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all duration-200 hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+                className="group mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-medium text-slate-950 shadow-md shadow-cyan-500/20 transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
                 Get Started
                 <svg
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
