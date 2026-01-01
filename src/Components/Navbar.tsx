@@ -33,13 +33,13 @@ const Navbar: React.FC = () => {
         {/* Right side */}
         <div className="flex items-center gap-6">
           {/* Resume link */}
-          <a
+          {/* <a
             href="/resume.pdf"
             download
             className="hidden text-sm font-medium text-slate-400 transition-colors hover:text-slate-200 sm:inline-flex"
           >
             Resume
-          </a>
+          </a> */}
 
           {/* CTA Button */}
           <a
